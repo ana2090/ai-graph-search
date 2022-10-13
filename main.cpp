@@ -1,8 +1,8 @@
-#include "tsp_search.h"
+#include "greedy.h"
 
 int main(int argc, const char* argv[]) {
    Graph romania(20);
-   vector<string> romania_cities = {"arad", "zerind", "sibiu", "timisosara", 
+   std::vector<string> romania_cities = {"arad", "zerind", "sibiu", "timisosara", 
    "oradea", "fagaras", "rimnicu", "lugoj", "bucharest", "pitesti", "craiova",
     "mehadia", "giurgiu", "dobreta", "urziceni", "hirsova", "eforie", "vasiul",
     "iasi", "neamt"};
