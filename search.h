@@ -14,7 +14,7 @@ class Search { // search base class
         bool is_city_closed(int idx);
         void print_path(std::vector<string> path, string search_alg);
         bool empty_queues();
-}
+};
 
 
 #endif

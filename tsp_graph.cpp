@@ -16,7 +16,7 @@ Graph::Graph(int num_vertices) {
 
 // creates the list of cities
 // length has to be same as num_vertices
-bool Graph::create_city_list(vector<string> input_cities) {
+bool Graph::create_city_list(std::vector<string> input_cities) {
     if (int(input_cities.size()) != this->num_vertices) {
         cout << "ERROR: city list length not same as number of vertices in graph\n";
         return false;

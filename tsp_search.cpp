@@ -9,7 +9,7 @@ int Greedy_Best::greedy_best_first(Graph grph, string start_city, string goal_ci
     string current_city = start_city;
     int total_cost = 0;
     int min, min_idx;
-    vector<string> path;
+    std::vector<string> path;
     path.push_back(start_city);
 
     opened.push(grph.get_city_index(start_city));
@@ -26,7 +26,7 @@ int Greedy_Best::greedy_best_first(Graph grph, string start_city, string goal_ci
 
         if (min_idx == -1 || min == NO_EDGE) { // not at goal, but no edge found
             cout << "LOG: no edge found from " << current_city << "\n";
-            print_path(path);
+            print_path(path, alg_name);
             return total_cost;
         }
 
@@ -44,7 +44,7 @@ int Greedy_Best::greedy_best_first(Graph grph, string start_city, string goal_ci
     }
 
     // print path vector
-    print_path(path);
+    print_path(path, alg_name);
     cout << "---total cost is " << total_cost << "\n";
     return total_cost;
 }
@@ -80,8 +80,8 @@ bool Greedy_Best::is_city_closed(int idx) {
     return false;
 }
 
-void Greedy_Best::print_path(vector<string> path) {
-    cout << "OUT: printing Greedy Best's Path from " << path.front()
+void Greedy_Best::print_path(std::vector<string> path, string search_alg) {
+    cout << "OUT: printing " << search_alg << "'s Path from " << path.front()
         << " to " << path.back() << "\n---";
     for (int i = 0; i < int (path.size()); i++) {
         cout << path[i] << ", ";
