@@ -5,7 +5,7 @@
 #include "tsp_graph.h"
 
 class Search { // search base class
-    private:
+    public:
         std::queue<int> opened;
         std::vector<int> closed;
 
