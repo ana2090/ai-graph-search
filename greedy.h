@@ -8,6 +8,7 @@ class Greedy_Best: private Search {
     public:
         Greedy_Best() {}
         int greedy_best_first(Graph grph, string start_city, string goal_city);
+        int greedy_best_tsp(Graph grph, string city);
     private:
         string alg_name = "Greedy Best-First";
 };

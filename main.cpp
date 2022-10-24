@@ -2,14 +2,17 @@
 
 int main(int argc, const char* argv[]) {
    Graph romania(20);
+
    std::vector<string> romania_cities = {"arad", "zerind", "sibiu", "timisosara", 
    "oradea", "fagaras", "rimnicu", "lugoj", "bucharest", "pitesti", "craiova",
     "mehadia", "giurgiu", "dobreta", "urziceni", "hirsova", "eforie", "vasiul",
     "iasi", "neamt"};
+
    if (!romania.create_city_list(romania_cities)) {
     cout << "LOG: failure in create_city_list\n";
     return 1;
    }
+   
    romania.add_edge("arad", "zerind", 75);
    romania.add_edge("arad", "sibiu", 140);
    romania.add_edge("arad", "timisosara", 118);
@@ -43,6 +46,7 @@ int main(int argc, const char* argv[]) {
    search.greedy_best_first(romania, "timisosara", "bucharest");
    search.greedy_best_first(romania, "fagaras", "dobreta");
 
+    
 
     return 0;
 }

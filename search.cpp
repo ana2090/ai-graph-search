@@ -1,6 +1,5 @@
 #include "search.h"
 
-
 int Search::get_index_of_min(int arr[], int len) {
     int min = NO_EDGE;
     int min_idx = -1;

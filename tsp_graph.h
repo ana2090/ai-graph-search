@@ -30,7 +30,6 @@ class Graph {
 
         friend class Greedy_Best;
         friend class A_Star;
-        //friend int Greedy_Best::greedy_best_first(Graph grph, string start_city, string goal_city);
 
     private:
         int** adj_matrix;

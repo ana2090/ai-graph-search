@@ -48,3 +48,43 @@ int Greedy_Best::greedy_best_first(Graph grph, string start_city, string goal_ci
     cout << "---total cost is " << total_cost << "\n";
     return total_cost;
 }
+
+int Greedy_Best::greedy_best_tsp(Graph grph, string city) {
+    int total_cost = 0;
+    string current_city = city;
+    int* curr_edges;
+    int min, min_idx;
+    std::vector<string> path;
+    path.push_back(city);        
+    opened.push(grph.get_city_index(city));
+
+    do {
+        curr_edges = grph.get_edges(city);
+
+        closed.push_back(opened.front());
+        opened.pop();
+
+         // get min of the current edges from this city & check if city is closed
+        min = get_min(curr_edges, grph.num_vertices);
+        min_idx = get_index_of_min(curr_edges, grph.num_vertices);
+
+        if (min_idx == -1 || min == NO_EDGE) { // not at goal, but no edge found
+            cout << "LOG: no edge found from " << current_city << "\n";
+            print_path(path, alg_name);
+            return total_cost;
+        }
+
+        // add to the total cost
+        total_cost += min;
+
+        // set that as the current city
+        current_city = grph.cities[min_idx];
+        path.push_back(current_city);
+        opened.push(min_idx);
+    } while (current_city != city);
+
+    // print path vector
+    print_path(path, alg_name);
+    cout << "---total cost is " << total_cost << "\n";
+    return total_cost;
+}
