@@ -27,6 +27,7 @@ class Graph {
         bool add_edge(string start_city, string end_city, int cost);
         void print_edges(string city);
         int* get_edges(string city);   
+        int get_edge(string start_city, string end_city);
 
         friend class Greedy_Best;
         friend class A_Star;

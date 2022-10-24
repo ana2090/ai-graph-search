@@ -11,6 +11,12 @@ class Greedy_Best: private Search {
         int greedy_best_tsp(Graph grph, string city);
     private:
         string alg_name = "Greedy Best-First";
+        // overloaded; from search.cpp but now have stuck parameter
+        int get_index_of_min(int arr[], int len, std::vector<int> stuck);
+        int get_min(int arr[], int len, std::vector<int> stuck);
+        
+        bool check_tsp_done(string city, string curr_city, std::vector<string> path, Graph grph);
+        bool is_city_stuck(int idx, std::vector<int> stuck);
 };
 
 #endif

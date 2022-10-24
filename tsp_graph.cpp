@@ -61,6 +61,15 @@ int* Graph::get_edges(string city) {
     return adj_matrix[idx];
 }    
 
+// returns the value of the indicated edge or NO_EDGE if there is none
+int Graph::get_edge(string start_city, string end_city) {
+    int v1, v2;
+    if ((v1 = get_city_index(start_city)) == -1 || (v2 = get_city_index(end_city)) == -1) {
+        exit(1);
+    }
+    return adj_matrix[v1][v2];
+}
+
 // returns the index of where the city is in the vector
 // failure is -1
 int Graph::get_city_index(string city) {

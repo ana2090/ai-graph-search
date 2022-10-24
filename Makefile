@@ -1,16 +1,9 @@
-OBJS = tsp_search.o tsp_graph.o main.o
+OBJS = greedy.o search.o tsp_graph.o main.o
+SOURCE = greedy.cpp search.cpp tsp_graph.cpp main.cpp
 CC = g++
 CFLAGS = -Wall -Werror -std=c++11 -pedantic
 
-all: tsp
-
-tsp: $(OBJS)
-	$(CC) $(OBJS) -o tsp
-tsp_search.o: tsp_search.cpp tsp_search.h
-	$(CC) $(CFLAGS) tsp_search.cpp
-tsp_graph.o: tsp_graph.cpp tsp_graph.h
-	$(CC) $(CFLAGS) tsp_graph.cpp
-main.o: main.cpp
-	$(CC) $(CFLAGS) main.cpp
+tsp:
+	$(CC) $(CFLAGS) $(SOURCE) -o tsp
 clean:
 	\rm *.o tsp
